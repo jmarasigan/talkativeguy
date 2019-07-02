@@ -1,0 +1,90 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "Welcome",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "Welcome",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Greetings"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-6UR37v"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"firstname\",\"value\":\"{{event.preview}}\"}"
+      ]
+    },
+    {
+      "id": "84f09f4f11",
+      "name": "Greetings",
+      "next": [
+        {
+          "condition": "user.checkPerks =='yes'",
+          "node": "Get_Available_Promotions"
+        },
+        {
+          "condition": "session.checkPerks !='yes'",
+          "node": "goodbye"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-YngN1b"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"checkPerks\",\"value\":\"{{event.preview}}\"}"
+      ]
+    },
+    {
+      "id": "skill-1b496d",
+      "type": "skill-call",
+      "skill": "CallAPI",
+      "name": "Get_Available_Promotions",
+      "flow": "skills/CallAPI-1b496d.flow.json",
+      "next": [
+        {
+          "caption": "On success",
+          "condition": "temp.valid",
+          "node": "display_promotion"
+        },
+        {
+          "caption": "On failure",
+          "condition": "!temp.valid",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "b4ef538318",
+      "name": "display_promotion",
+      "next": [
+        {
+          "condition": "true",
+          "node": "goodbye"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-YjstKx"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "e46a0a9456",
+      "name": "goodbye",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-AWjtEd"
+      ],
+      "onReceive": null
+    }
+  ]
+}

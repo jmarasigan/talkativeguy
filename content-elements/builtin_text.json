@@ -1,0 +1,42 @@
+[
+  {
+    "id": "builtin_text-6UR37v",
+    "formData": {
+      "text$en": "Hi There! May i get your name?",
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-07-02T11:51:09.934Z",
+    "modifiedOn": "2019-07-02T11:51:09.934Z"
+  },
+  {
+    "id": "builtin_text-YngN1b",
+    "formData": {
+      "text$en": "Howdy {{user.firstname}} !\nWe have some perks for you. do you wanna to check?",
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-07-02T11:52:51.874Z",
+    "modifiedOn": "2019-07-02T12:44:01.625Z"
+  },
+  {
+    "id": "builtin_text-YjstKx",
+    "formData": {
+      "text$en": "{{session.response.body.promo}}",
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-07-02T12:12:49.419Z",
+    "modifiedOn": "2019-07-02T12:26:17.678Z"
+  },
+  {
+    "id": "builtin_text-AWjtEd",
+    "formData": {
+      "text$en": "Goodbye {{user.firstname}}!",
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-07-02T12:50:15.430Z",
+    "modifiedOn": "2019-07-02T12:50:15.430Z"
+  }
+]
